@@ -28,14 +28,13 @@ def dfs(graph):
 
     while stack:
         x,y,route = stack.pop()
-        alphabet = set(route) 
-        max_val = max(max_val,len(alphabet))   
+        max_val = max(max_val,len(route))   
         for i in range(4):
             nx = x + dx[i]
             ny = y + dy[i]
             if nx >= R or nx < 0 or ny >= C or ny < 0:
                 continue
-            if graph[nx][ny] not in alphabet:
+            if graph[nx][ny] not in route:
                 stack.append((nx,ny,route+graph[nx][ny]))
     print(max_val)
 
@@ -45,4 +44,4 @@ graph = [[0]*C for i in range(R)]
 for i in range(R):
     graph[i] = list(input().rstrip())
 
-bfs(graph)
+dfs(graph)
