@@ -35,11 +35,9 @@ for i in range(1,n+1):
 plan = list(map(int,input().split()))
 
 root = find(plan[0])
-success = True
 for p in plan:
     if root != find(p):
         print("NO")
-        success = False
         break
-if success:
+else:
     print("YES")
