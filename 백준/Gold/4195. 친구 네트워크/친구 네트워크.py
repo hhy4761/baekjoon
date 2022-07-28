@@ -1,7 +1,7 @@
 import sys
 from collections import defaultdict
 sys.setrecursionlimit(100000)
-
+input = sys.stdin.readline
 def find(target):
     if target == parent[target]:
         return target
