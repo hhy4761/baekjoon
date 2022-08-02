@@ -1,29 +1,30 @@
 #include <iostream>
-#include <algorithm>
 
 using namespace std;
 
 int n,m;
-int nums[10];
-bool idx[10];
+int arr[10];
+bool used[10];
+
+void dfs(int cur){
+    if(cur==m){
+        for(int i=0; i<m; i++){
+            cout << arr[i] << " ";
+        }
+        cout << "\n";
+        return;
+    }
+    for(int i=1;i<=n;i++){
+        if(i < arr[cur-1] or used[i]) continue;
+        arr[cur] = i;
+        used[i] = 1;
+        dfs(cur+1);
+        used[i] =0;
+    }
+}
 int main(){
     ios::sync_with_stdio(0);
     cin.tie(0);
     cin >> n >> m;
-    for(int i=1;i<=n;i++){
-        nums[i] = i;
-    }
-    for(int i=1;i<=m;i++){
-        idx[i] = 1;
-    }
-    for(int i=m+1; i<=n;i++){
-        idx[i] = 0;
-    }
-    do{
-        for(int i=1;i<=n;i++){
-            if(idx[i]==1)
-                cout << nums[i] << ' ';
-        }
-        cout << "\n";
-    }while(prev_permutation(idx+1,idx+n+1));
+    dfs(0);
 }
