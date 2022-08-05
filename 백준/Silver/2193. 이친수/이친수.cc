@@ -11,6 +11,6 @@ int main(){
     d[2] = 1;
     d[3] = 2;
     for(int i=4; i<=n; i++)
-        d[i] = d[i-2]*2 + d[i-3] ;
+        d[i] = d[i-1] + d[i-2] ;
     cout << d[n];
 }
