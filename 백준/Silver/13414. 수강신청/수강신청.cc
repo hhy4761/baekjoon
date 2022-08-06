@@ -1,11 +1,11 @@
 #include <iostream>
-#include <map>
+#include <unordered_map>
 #include <vector>
 #include <algorithm>
 using namespace std;
 
 int k,l;
-map<string,int> m;
+unordered_map<string,int> m;
 
 bool cmp(pair<string,int> &a, pair<string,int> &b){
     return a.second < b.second;
