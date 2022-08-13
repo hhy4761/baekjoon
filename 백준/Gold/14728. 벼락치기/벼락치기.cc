@@ -4,7 +4,7 @@ using namespace std;
 int n,t;
 int k[100];
 int s[100];
-int cache[10001][101];
+int cache[10001][100];
 int study(int totalT, int cur){
     if(cur == n) return 0;
     int& ret = cache[totalT][cur];
