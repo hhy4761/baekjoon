@@ -18,7 +18,7 @@ bool check(vector<int> S, int numFriends, int k){
     }
     return true;
 }
-int ans;
+
 int solution(vector<int> stones, int k) {
     
     int start = 1;
